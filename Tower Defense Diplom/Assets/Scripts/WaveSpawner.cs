@@ -37,8 +37,8 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave()
     {
         Wave wave = new Wave();
-        wave.countEnemies = waveIndex + 1;
         waveIndex++;
+        wave.countEnemies = waveIndex;
 
         for (int i = 0; i < waveIndex; i++)
         {
@@ -61,7 +61,6 @@ public class WaveSpawner : MonoBehaviour
         for (int i = 0; i < waveIndex; i++)
         {
             SpawnEnemy(i, wave);
-            //Debug.Log(i + " " + wave.enemies.Count); //вот здесь какая-то ошибка, индекс не входит в диапазон, хотя он входит
             yield return new WaitForSeconds(1f);
         }
     }

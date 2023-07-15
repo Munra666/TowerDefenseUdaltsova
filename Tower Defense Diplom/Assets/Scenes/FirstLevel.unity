@@ -1558,8 +1558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 1241295398}
-  faderScene: {fileID: 7450566791026366927, guid: 17105274eff11f64b9eff30276b26ca8,
-    type: 3}
+  faderScene: {fileID: 1604357558}
 --- !u!1 &383645374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1834,8 +1833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roundsText: {fileID: 190568667}
-  faderScene: {fileID: 7450566791026366927, guid: 17105274eff11f64b9eff30276b26ca8,
-    type: 3}
+  faderScene: {fileID: 1604357558}
 --- !u!1001 &391802176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26934,6 +26932,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587715040}
   m_CullTransparentMesh: 0
+--- !u!114 &1604357558 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7450566791026366927, guid: 17105274eff11f64b9eff30276b26ca8,
+    type: 3}
+  m_PrefabInstance: {fileID: 7450566792586604277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6d3b680c37d224f93e2251050179b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1607321640
 GameObject:
   m_ObjectHideFlags: 0
