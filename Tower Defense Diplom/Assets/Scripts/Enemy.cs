@@ -1,39 +1,94 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 10f;
+    public float startSpeed = 10f;
 
-    private Transform target;
-    private int wavepointIndex = 0;
+    public float startHealth = 100;
+    private float health;
+
+    public int worth = 50;
+
+    public GameObject dieEffect;
+
+    [Header("EnemyExplosion")]
+    public bool isExplosion = false;
+    public int damage = 10;
+    public float distanceExplosion = 15f;
+    public GameObject explosionEffect;
+
+    [Header("Enemy UI")]
+    public Canvas canvas;
+    public Image healthBar;
+
+    private NavMeshAgent agent;
 
     private void Start()
     {
-        target = WaypPoints.points[0];
+        agent = GetComponent<NavMeshAgent>();
+        agent.speed = startSpeed;
+        health = startHealth;
     }
 
-    private void Update()
+    public void TakeDamage(float amount)
     {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+        health -= amount;
 
-        if (Vector3.Distance(transform.position, target.position) <= 0.4f)
+        healthBar.fillAmount = health / startHealth;
+
+        if (health <= 0f)
         {
-            GetNextWaypoint();
+            if (isExplosion)
+                DamageTurrets();
+            
+            Die();
         }
     }
 
-    void GetNextWaypoint()
+    public void Slow(float pct)
     {
-        if (wavepointIndex >= WaypPoints.points.Length - 1)
+        agent.speed = startSpeed * (1f - pct);
+    }
+
+   private void DamageTurrets()
+    {
+        Turret[] turrets = GameObject.FindObjectsOfType<Turret>();
+
+        foreach (Turret turret in turrets)
         {
-            Destroy(gameObject);
-            return;
+            float distanceToTurret = Vector3.Distance(transform.position, turret.transform.position);
+            if (distanceToTurret < distanceExplosion)
+            {
+                turret.TakeDamage(damage);
+            }
         }
-        
-        wavepointIndex++;
-        target = WaypPoints.points[wavepointIndex];
+
+        GameObject effect = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 5f);
+
+        AudioManager.Instance.OneShotPlay(AudioManager.Instance.enemyExplosion);
+    }
+
+    private void Die()
+    {
+        PlayerStats.Money += worth;
+
+        AudioManager.Instance.OneShotPlay(AudioManager.Instance.enemyDie);
+
+        GameObject effect = Instantiate(dieEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 5f);
+
+        Destroy(gameObject);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if(isExplosion)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, distanceExplosion);
+        }
     }
 }
