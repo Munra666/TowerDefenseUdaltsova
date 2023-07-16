@@ -11,6 +11,7 @@ public class PlayerStats : MonoBehaviour
     public int startLives = 20;
 
     public static int rounds;
+    public static int bestResult;
 
     private void Start()
     {
@@ -18,6 +19,9 @@ public class PlayerStats : MonoBehaviour
         Lives = startLives;
 
         rounds = 0;
+
+        if (PlayerPrefs.GetInt("bestResult") != 0)
+            bestResult = PlayerPrefs.GetInt("bestResult");
     }
 
     

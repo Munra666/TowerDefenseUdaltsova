@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
+    public static int EnemiesOnScene = 0;
+    
     public EnemyController[] typesEnemies;
     public int newEnemy = 5;
     private bool enteringNewEnemy;
@@ -19,12 +21,18 @@ public class WaveSpawner : MonoBehaviour
 
     private int waveIndex = 0;
 
-    void Update()
+    private void Update()
     {
+        if(EnemiesOnScene > 0)
+        {
+            return;
+        }
+        
         if(countdown <= 0f)
         {
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
+            return;
         }
 
         countdown -= Time.deltaTime;
@@ -68,5 +76,11 @@ public class WaveSpawner : MonoBehaviour
     private void SpawnEnemy(int index, Wave wave)
     {
         Instantiate(wave.enemies[index], spawnPoint.position, spawnPoint.rotation);
+        EnemiesOnScene++;
+    }
+
+    private void OnDisable()
+    {
+        EnemiesOnScene = 0;
     }
 }

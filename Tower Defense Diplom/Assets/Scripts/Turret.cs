@@ -8,6 +8,9 @@ public class Turret : MonoBehaviour
     private Transform target;
     private Enemy targetEnemy;
 
+    [Header("UI")]
+    public Canvas canvas;
+
     [Header("General")]
     public float range = 15f;
     public float startHealth = 100;
@@ -41,6 +44,9 @@ public class Turret : MonoBehaviour
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
 
         health = startHealth;
+
+        if (canvas.transform.rotation != Camera.main.transform.rotation)
+            canvas.transform.rotation = Camera.main.transform.rotation;
     }
 
     private void UpdateTarget()

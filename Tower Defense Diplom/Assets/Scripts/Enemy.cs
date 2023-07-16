@@ -80,6 +80,8 @@ public class Enemy : MonoBehaviour
         GameObject effect = Instantiate(dieEffect, transform.position, Quaternion.identity);
         Destroy(effect, 5f);
 
+        WaveSpawner.EnemiesOnScene--;
+
         Destroy(gameObject);
     }
 

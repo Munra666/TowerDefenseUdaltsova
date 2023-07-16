@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414d7947b9d455b4abb9aec6c49fa1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 9099742526098790878}
   range: 16
   startHealth: 100
   healthBar: {fileID: 8026189409625742901}

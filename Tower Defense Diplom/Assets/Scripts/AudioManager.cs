@@ -1,10 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-[RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
 {
+    [Header("Sound Setting")]
+    public AudioSource soundSource;
+    public Slider soundSlider;
+
+    [Header("Music Setting")]
+    public AudioSource musicSource;
+    public Slider musicSlider;
+
     [Header("Background")]
     public AudioClip background;
 
@@ -26,35 +34,59 @@ public class AudioManager : MonoBehaviour
     public AudioClip airAttack;
     public AudioClip gameOver;
 
-    private AudioSource audioSource;
-
 	public static AudioManager Instance;
 
     private void Awake()
     {
         if (Instance != null)
         {
-            Debug.LogError("More than one AudioManager in scene!");
             return;
         }
 
         Instance = this;
+        
+        PlayBackground();
     }
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        PlayBackground();
+        LoadSetting();
     }
 
     public void OneShotPlay(AudioClip clip)
     {
-        audioSource.PlayOneShot(clip);
+        soundSource.pitch = Random.Range(0.9f, 1.1f);
+        soundSource.PlayOneShot(clip);
     }
 
     public void PlayBackground()
     {
-        audioSource.clip = background;
-        audioSource.Play();
+        musicSource.clip = background;
+        musicSource.Play();
+    }
+
+    public void SetSoundValue(float value)
+    {
+        soundSource.volume = value;
+        PlayerPrefs.SetFloat("soundSource.volume", soundSource.volume);
+    }
+
+    public void SetMusicValue(float value)
+    {
+        musicSource.volume = value;
+        PlayerPrefs.SetFloat("musicSource.volume", musicSource.volume);
+    }
+
+    public void LoadSetting()
+    {
+
+        if (soundSlider != null && musicSlider != null)
+        {
+            soundSlider.value = PlayerPrefs.GetFloat("soundSource.volume");
+            musicSlider.value = PlayerPrefs.GetFloat("musicSource.volume");
+        }
+
+        soundSource.volume = PlayerPrefs.GetFloat("soundSource.volume");
+        musicSource.volume = PlayerPrefs.GetFloat("musicSource.volume");
     }
 }

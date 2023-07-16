@@ -34,6 +34,7 @@ public class EnemyController : MonoBehaviour
     private void EndPoint()
     {
         PlayerStats.Lives--;
+        WaveSpawner.EnemiesOnScene--;
         Destroy(gameObject);
     }
 

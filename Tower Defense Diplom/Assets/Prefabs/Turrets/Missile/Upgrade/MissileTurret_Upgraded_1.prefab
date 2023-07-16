@@ -145,7 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414d7947b9d455b4abb9aec6c49fa1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 22
+  canvas: {fileID: 5836283802870200293}
+  range: 17
   startHealth: 150
   healthBar: {fileID: 2079262868553546443}
   isDestruction: 0
