@@ -32,18 +32,19 @@ public class LoadSaveNodes : MonoBehaviour
         {
             if(nodes[i].turret != null)
                 PlayerPrefs.SetFloat("turretHealth" + i.ToString(), nodes[i].turret.GetComponent<Turret>().health);
+            else
+                PlayerPrefs.SetFloat("turretHealth" + i.ToString(), 0);
         }
     }
 
     /// <summary>
     /// Сохранение данных узлов
     /// </summary>
-    private void Save()
+    public void Save()
     {
         for (int i = 0; i < nodes.Length; i++)
         {
-            if(nodes[i].upgradeLevelNumber != 0)
-                PlayerPrefs.SetInt("node_upgradeLevelNumber" + i.ToString(), nodes[i].upgradeLevelNumber);
+               PlayerPrefs.SetInt("node_upgradeLevelNumber" + i.ToString(), nodes[i].upgradeLevelNumber);
 
             if (nodes[i].turretBlueprint != null)
                 PlayerPrefs.SetInt("node_turretBlueprint" + i.ToString(), nodes[i].turretBlueprint.index);

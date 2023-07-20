@@ -166,6 +166,8 @@ public class Turret : MonoBehaviour
 
         healthBar.fillAmount = health / startHealth;
 
+        LoadSaveNodes.Instance.SaveHealthTurrets();
+
         if (health <= 0f)
         {
             isDestruction = true;

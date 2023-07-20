@@ -4776,7 +4776,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e546d2d7171981b468cf29388d902e99, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -9709,8 +9709,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.7
-  m_Range: 30
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -9754,7 +9754,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6.47e-43, y: 0, z: 1.3e-44, w: NaN}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -14604,9 +14604,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3774982949427143663}
-  m_LocalRotation: {x: -0, y: -0, z: -0.16655715, w: 0.98603183}
-  m_LocalPosition: {x: -727.7562, y: -500.37207, z: -24.375}
-  m_LocalScale: {x: 6.25, y: 6.25, z: 6.25}
+  m_LocalRotation: {x: -0, y: -0, z: -0.16041645, w: 0.98704946}
+  m_LocalPosition: {x: 36.533287, y: 0.20586753, z: -38.3}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 7868363652200280376}
   - {fileID: 8064209641866264210}
@@ -14616,7 +14616,7 @@ Transform:
   - {fileID: 947943706494076368}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -19.175001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -18.462002}
 --- !u!198 &3133172827407736156
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -24193,7 +24193,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

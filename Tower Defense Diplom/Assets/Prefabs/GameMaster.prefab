@@ -390,7 +390,7 @@ MonoBehaviour:
   newEnemy: 5
   spawnPoints:
   - {fileID: 0}
-  timeBetweenWaves: 10
+  timeBetweenWaves: 5
   waveCowntdownText: {fileID: 0}
 --- !u!114 &961236312693152274
 MonoBehaviour:
@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startMoney: 2000
-  startLives: 1
+  startLives: 10
 --- !u!114 &961236312693152749
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -88,6 +88,9 @@ public class Node : MonoBehaviour
         upgradeLevelNumber++;
 
         turretBlueprint = blueprint;
+
+        healthTurretLoad = turret.GetComponent<Turret>().health;
+        LoadSaveNodes.Instance.SaveHealthTurrets();
     }
 
     /// <summary>
@@ -119,6 +122,9 @@ public class Node : MonoBehaviour
         {
             isMaxUpgraded = true;
         }
+
+        healthTurretLoad = turret.GetComponent<Turret>().health;
+        LoadSaveNodes.Instance.SaveHealthTurrets();
     }
 
     /// <summary>
@@ -128,16 +134,7 @@ public class Node : MonoBehaviour
     {
         PlayerStats.Money += turretBlueprint.GetSellAmount();
 
-        GameObject effect = Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
-        Destroy(effect, 5f);
-
-        AudioManager.Instance.OneShotPlay(AudioManager.Instance.destructionTurret);
-
-        Destroy(turret);
-        turretBlueprint = null;
-
-        isMaxUpgraded = false;
-        upgradeLevelNumber = 0;
+        DestructionTurret();
     }
 
     /// <summary>
@@ -152,9 +149,11 @@ public class Node : MonoBehaviour
 
         Destroy(turret);
         turretBlueprint = null;
+        turret = null;
 
         isMaxUpgraded = false;
         upgradeLevelNumber = 0;
+        healthTurretLoad = 0;
     }
 
     private void OnMouseEnter()
@@ -199,7 +198,7 @@ public class Node : MonoBehaviour
             turret = _turret;
         }
 
-        if (upgradeLevelNumber >= turretBlueprint.upgradedPrefabs.Length)
+        if (upgradeLevelNumber >= turretBlueprint.upgradedPrefabs.Length && upgradeLevelNumber != 0)
             isMaxUpgraded = true;
 
         if (turret != null)

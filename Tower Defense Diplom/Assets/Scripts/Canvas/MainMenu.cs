@@ -33,6 +33,9 @@ public class MainMenu : MonoBehaviour
         newGameCanvas.SetBool("isOpen", true);
     }
 
+    /// <summary>
+    /// Запуск новой игры
+    /// </summary>
     public void StartGame()
     {
         AudioManager.Instance.OneShotPlay(AudioManager.Instance.clickButton);
@@ -42,6 +45,9 @@ public class MainMenu : MonoBehaviour
         faderScene.FadeTo(levelToLoad);
     }
 
+    /// <summary>
+    /// Вернуть последнее сохранение
+    /// </summary>
     public void Continue()
     {
         AudioManager.Instance.OneShotPlay(AudioManager.Instance.clickButton);
@@ -77,12 +83,20 @@ public class MainMenu : MonoBehaviour
     }
 
     /// <summary>
-    /// Удаляет все сохранения кроме лучшего результата
+    /// Удаляет все сохранения кроме лучшего результата и настроек звука
     /// </summary>
     private void DeleteAllSave()
     {
         int bestResult = PlayerPrefs.GetInt("bestResult");
+        float soundVolume = PlayerPrefs.GetFloat("soundSource.volume");
+        float musicVolume = PlayerPrefs.GetFloat("musicSource.volume");
+
         PlayerPrefs.DeleteAll();
+
         PlayerPrefs.SetInt("bestResult", bestResult);
+        PlayerPrefs.SetFloat("soundSource.volume", soundVolume);
+        PlayerPrefs.SetFloat("musicSource.volume", musicVolume);
+
+        continueButton.interactable = false;
     }
 }

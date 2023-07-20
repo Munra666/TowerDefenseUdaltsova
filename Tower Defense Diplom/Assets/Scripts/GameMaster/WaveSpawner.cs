@@ -31,9 +31,9 @@ public class WaveSpawner : MonoBehaviour
         {
             return;
         }
-        
-        if(countdown <= 0f)
+        else if(EnemiesOnScene <= 0 && countdown <= 0f)
         {
+            EnemiesOnScene = 0;
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
             return;
@@ -70,7 +70,7 @@ public class WaveSpawner : MonoBehaviour
         PlayerStats.rounds++;
         AudioManager.Instance.OneShotPlay(AudioManager.Instance.newWave);
 
-        for (int i = 0; i < waveIndex; i++)  ///ошибка
+        for (int i = 0; i < waveIndex; i++)
         {
             SpawnEnemy(i, wave);
             yield return new WaitForSeconds(1f);
@@ -83,7 +83,6 @@ public class WaveSpawner : MonoBehaviour
         {
             Instantiate(wave.enemies[index], sp.position, sp.rotation);
         }
-        EnemiesOnScene++;
     }
 
     private void Save()

@@ -310,11 +310,12 @@ MonoBehaviour:
   startSpeed: 5
   startHealth: 100
   worth: 100
+  takingLives: 1
   dieEffect: {fileID: 8957245264006224420, guid: 6ac5181cf4077b34eb07f63812dfd8ed,
     type: 3}
   isExplosion: 1
   damage: 10
-  distanceExplosion: 8
+  distanceExplosion: 10
   explosionEffect: {fileID: 1232082173027733633, guid: 597f2ebd5c8089b4dbed395cbd557809,
     type: 3}
   canvas: {fileID: 3961012622185310899}

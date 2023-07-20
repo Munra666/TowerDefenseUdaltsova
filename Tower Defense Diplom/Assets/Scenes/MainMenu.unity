@@ -5715,7 +5715,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b130d794946757b4ab1f35d4a7eb205a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: 1
   settingCanvas: {fileID: 1591696338}
   newGameCanvas: {fileID: 770155841}
   continueButton: {fileID: 1168180466}
@@ -10057,7 +10056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25490198, g: 0.37254903, b: 0.3764706, a: 0.84313726}
+  m_Color: {r: 0.25490198, g: 0.37254903, b: 0.3764706, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

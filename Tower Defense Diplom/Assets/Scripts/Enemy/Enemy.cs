@@ -31,6 +31,8 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.speed = startSpeed;
         health = startHealth;
+
+        WaveSpawner.EnemiesOnScene++;
     }
 
     /// <summary>
@@ -81,8 +83,6 @@ public class Enemy : MonoBehaviour
         Destroy(effect, 5f);
 
         AudioManager.Instance.OneShotPlay(AudioManager.Instance.enemyExplosion);
-
-        LoadSaveNodes.Instance.SaveHealthTurrets();
     }
 
     /// <summary>
