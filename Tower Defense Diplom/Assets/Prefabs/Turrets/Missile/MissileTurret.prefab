@@ -371,7 +371,7 @@ Transform:
   m_GameObject: {fileID: 6026306583336015951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 1821639172536336305}
   - {fileID: 6467065085757637944}
@@ -393,7 +393,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 5309948548661271252}
   range: 16
-  startHealth: 100
+  startHealth: 110
+  health: 110
   healthBar: {fileID: 5144992564157250389}
   isDestruction: 0
   bulletPrefab: {fileID: 8643550125844182847, guid: 0d67119f87831de40b0b355ebf6e3b95,

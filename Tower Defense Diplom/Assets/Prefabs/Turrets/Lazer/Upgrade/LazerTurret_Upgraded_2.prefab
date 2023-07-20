@@ -14761,7 +14761,7 @@ Transform:
   m_GameObject: {fileID: 226857788524413723}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
   m_Children:
   - {fileID: 226857788129381715}
   - {fileID: 226857787095422354}
@@ -14784,7 +14784,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 7790164951237979222}
   range: 18
-  startHealth: 200
+  startHealth: 140
+  health: 140
   healthBar: {fileID: 4401895299821571316}
   isDestruction: 0
   bulletPrefab: {fileID: 0}
@@ -14837,8 +14838,8 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 3.2, z: 1.5}
-  - {x: 0, y: 3.2, z: 5}
+  - {x: 0, y: 3.6, z: 2}
+  - {x: 0, y: 3.6, z: 5}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

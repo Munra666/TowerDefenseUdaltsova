@@ -111,7 +111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.011, y: 4.819}
+  m_AnchoredPosition: {x: 0.011, y: 5.36}
   m_SizeDelta: {x: 193.92975, y: 36.823307}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6963523746115884737
@@ -902,7 +902,7 @@ Transform:
   m_GameObject: {fileID: 4430288086465141820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 4430288085611344224}
   - {fileID: 4430288087016865793}
@@ -924,7 +924,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 6963523746115884737}
   range: 18
-  startHealth: 100
+  startHealth: 130
+  health: 130
   healthBar: {fileID: 7456475953524062950}
   isDestruction: 0
   bulletPrefab: {fileID: 9143783510223519169, guid: 7546e0098e344ca4d86bfcadb44174f6,
@@ -1075,8 +1076,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4430288087231042858}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_LocalPosition: {x: 0, y: 0.036, z: 0}
+  m_LocalScale: {x: 1.3, y: 1.6699629, z: 1.3}
   m_Children:
   - {fileID: 4430288085794240390}
   m_Father: {fileID: 4430288087016865793}
